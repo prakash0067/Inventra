@@ -1,15 +1,47 @@
-*.iml
-.gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
-.DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
+# Built application files
+*.apk
+*.ap_
+
+# Java class files
+*.class
+
+# Gradle & build
+.gradle/
+build/
+.externalNativeBuild/
+.cxx/
+
+# Local configuration
 local.properties
+
+# IDE specific
+.idea/
+*.iml
+
+# Specific .idea contents to keep
+!.idea/codeStyles/  # optional: keep code style settings
+.idea/caches/
+.idea/libraries/
+.idea/modules.xml
+.idea/workspace.xml
+.idea/navEditor.xml
+.idea/assetWizardSettings.xml
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Android Studio captures
+captures/
+
+# Keystore files (important for release signing)
+*.jks
+*.keystore
+
+# Logs
+*.log
+
+# Misc
+*.bak
+*.swp
+*.tmp
