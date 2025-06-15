@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn = "navigation_view">
+
+    <group
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/home_page_svgrepo_com"
+            android:title="Dashboard"/>
+
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/person_defualt_image"
+            android:title="Profile"/>
+
+        <item
+            android:id="@+id/billin_history"
+            android:icon="@drawable/baseline_playlist_add_circle_24"
+            android:title="Billing History"/>
+
+        <item
+            android:id="@+id/staff_management"
+            android:icon="@drawable/baseline_people_alt_24"
+            android:title="Staff"/>
+
+        <item
+            android:id="@+id/payments_nav"
+            android:icon="@drawable/baseline_payments_24"
+            android:title="Payments"/>
+
+        <item
+            android:id="@+id/reports_nav"
+            android:icon="@drawable/report_svgrepo_com"
+            android:title="Reports"/>
+
+    </group>
+    <item
+        android:title="Add">
+        <menu>
+        <item
+            android:id="@+id/add_inventory_nav"
+            android:icon="@drawable/inventory_svgrepo_com"
+            android:title="Add Inventory"/>
+
+        <item
+            android:id="@+id/add_product_nav"
+            android:icon="@drawable/box_svgrepo_com"
+            android:title="Add Product"/>
+
+        <item
+            android:id="@+id/add_category_nav"
+            android:icon="@drawable/category_solid_svgrepo_com"
+            android:title="Add Category"/>
+        </menu>
+
+    </item>
+    <item
+        android:title="Others">
+        <menu>
+            <item
+                android:id="@+id/nav_about"
+                android:icon="@drawable/about_svgrepo_com"
+                android:title="About Us"/>
+
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/logout_2_svgrepo_com"
+                android:title="Logout"/>
+        </menu>
+
+    </item>
+
+</menu>

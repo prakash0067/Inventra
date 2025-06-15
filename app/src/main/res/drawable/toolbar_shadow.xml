@@ -1,0 +1,7 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <solid android:color="#9B9B9B" /> <!-- Light gray line -->
+
+    <size android:height="1dp" /> <!-- Thin divider line -->
+</shape>

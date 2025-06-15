@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background_image_ui"
+    android:padding="16dp">
+
+    <!-- Search bar with scan icon -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/searchbar_background"
+        android:padding="4dp"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="8dp"
+        android:elevation="10dp">
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/searchViewProducts"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:queryHint="Search for products..."
+            android:background="@android:color/transparent" />
+
+        <ImageView
+            android:id="@+id/scanIcon"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/scan_svgrepo_com"
+            android:contentDescription="Scan Icon"
+            android:clickable="true"
+            android:focusable="true" />
+    </LinearLayout>
+
+    <!-- Product RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewProducts"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:visibility="gone" />
+</LinearLayout>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="range_options">
+        <item>Last 5 Days</item>
+        <item>Last 5 Months</item>
+        <item>Last 5 Years</item>
+    </string-array>
+</resources>

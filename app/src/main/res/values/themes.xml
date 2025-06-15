@@ -1,0 +1,22 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Inventra" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="colorPrimary">@color/blue_500</item>
+        <item name="colorPrimaryVariant">@color/blue_700</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+
+        <item name="android:statusBarColor">@color/white</item>
+
+        <!-- If you want the action bar to have the same color as the status bar -->
+        <item name="android:windowActionBar">true</item>
+    </style>
+
+    <style name="Theme.Inventra" parent="Base.Theme.Inventra">
+        <!-- Set the global font -->
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="fontFamily">@font/poppins_regular</item>
+    </style>
+</resources>
