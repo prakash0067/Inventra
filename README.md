@@ -57,25 +57,21 @@
 - **Voice Recognition**: Android SpeechRecognizer
 - **Task Scheduling**: WorkManager
 
----
 
-## 📁 Folder Structure (Important Parts)
-
+### 📁 Folder Structure (Important Parts)
+```
 Inventra/
-│
 ├── app/
-│ ├── java/com/example/inventra/
-│ │ ├── MainActivity.java
-│ │ ├── DBConnect/ # Retrofit API client & service interface
-│ │ ├── admin/ # All admin features (inventory, staff)
-│ │ └── adapters/ # RecyclerView Adapters
-│ └── res/layout/ # XML layouts for fragments & activities
-│
-├── PHP APIs/ # PHP scripts for CRUD operations
+│   ├── java/com/example/inventra/
+│   │   ├── MainActivity.java
+│   │   ├── DBConnect/          # Retrofit API client & service interface
+│   │   ├── admin/              # All admin features (inventory, staff)
+│   │   └── adapters/           # RecyclerView Adapters
+│   └── res/layout/             # XML layouts for fragments & activities
+├── PHP APIs/                   # PHP scripts for CRUD operations
 └── README.md
+```
 
-
----
 
 ## 📸 Screenshots
 ![image](https://github.com/user-attachments/assets/a9803cb6-1a09-46f9-a441-33a20ee0b9db)
