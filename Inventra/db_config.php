@@ -1,8 +1,8 @@
 <?php
-$host = "localhost";
-$dbname = "Inventra";
-$username = "root";
-$password = "";
+$host = "your_host_name";
+$dbname = "you_database_name";
+$username = "your_user_name";
+$password = "your_password";
 
 function getDB() {
     global $host, $dbname, $username, $password;
