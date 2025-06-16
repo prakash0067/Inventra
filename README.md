@@ -75,32 +75,32 @@ Inventra/
 └── README.md
 
 Inventra (PHP APIs)/
-├── cart/
+├── cart/                              # Folder conatins cart related API
 │   ├── add_to_cart.php
 │   └── other files
-├── category/
-│   ├── add_category.php
-│   └── get_all_category.php
-├── img/
-├── login/
-│   └── login.php
+├── category/                          # Folder conatins category related API 
+│   ├── add_category.php               # PHP API to add new category
+│   └── get_all_category.php           # API to get all category list
+├── img/                               # Folder to store product images
+├── login/   
+│   └── login.php                      # API to authenticate user while login into system
 ├── notification/
-│   └── get_low_stock_products.php
-├── product/
+│   └── get_low_stock_products.php     # API that returns product which have quantity less than 10 to send notification to user
+├── product/                           # Folder conatins product related API i.e., to add new product, etc.
 │   ├── add_new_product.php
 │   └── other files
-├── profile/
-├── sales/
+├── profile/                           # Folder to store user's profile image
+├── sales/                             # Folder conatins sales related APIs
 │   ├── get_recent_sales.php
 │   └── other files
-├── staff/
-│   ├── add_staff.php
+├── staff/                             # Folder conatins staff related APIs
+│   ├── add_staff.php                  # Add new staff PHP API
 │   └── other files
-├── db_config.php
-├── get_dashboard_data.php
-├── get_sales_amount.php
+├── db_config.php                      # MySQL-PHP connectivity file
+├── get_dashboard_data.php             # API to get dashboard stats
+├── get_sales_amount.php               # API to get total sales amount 
 ├── get_total_products.php
-├── get_yearly_sales.php
+├── get_yearly_sales.php               # API to get yearly sales
 └── getProductCategories.php
 
 ```
