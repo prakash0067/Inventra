@@ -57,19 +57,52 @@
 - **Voice Recognition**: Android SpeechRecognizer
 - **Task Scheduling**: WorkManager
 
+### 📁 Database File (database name : inventra)
+- **File**: inventra.sql
 
 ### 📁 Folder Structure (Important Parts)
 ```
 Inventra/
 ├── app/
 │   ├── java/com/example/inventra/
-│   │   ├── MainActivity.java
-│   │   ├── DBConnect/          # Retrofit API client & service interface
-│   │   ├── admin/              # All admin features (inventory, staff)
-│   │   └── adapters/           # RecyclerView Adapters
-│   └── res/layout/             # XML layouts for fragments & activities
-├── PHP APIs/                   # PHP scripts for CRUD operations
+│   │   ├── MainActivity.java          # Main Acitivty of Application
+│   │   ├── DBConnect/                 # Retrofit API client & service interface
+│   │   ├── admin/                     # All admin features (inventory, staff)
+│   │   │   ├── AddInventory/          # Folder that contains adapters and model classes
+│   │   │   ├── BarcodeScan/           # Folder that contains adapters and model classes for barcode scanning functionality
+│   │   │   └── Other Folders          
+│   └── res/layout/                    # XML layouts for fragments & activities
 └── README.md
+
+Inventra (PHP APIs)/
+├── cart/
+│   ├── add_to_cart.php
+│   └── other files
+├── category/
+│   ├── add_category.php
+│   └── get_all_category.php
+├── img/
+├── login/
+│   └── login.php
+├── notification/
+│   └── get_low_stock_products.php
+├── product/
+│   ├── add_new_product.php
+│   └── other files
+├── profile/
+├── sales/
+│   ├── get_recent_sales.php
+│   └── other files
+├── staff/
+│   ├── add_staff.php
+│   └── other files
+├── db_config.php
+├── get_dashboard_data.php
+├── get_sales_amount.php
+├── get_total_products.php
+├── get_yearly_sales.php
+└── getProductCategories.php
+
 ```
 
 
@@ -95,4 +128,4 @@ Inventra/
 
 1. Clone the repo:
    ```bash
-   git clone https://github.com/yourusername/Inventra.git
+   git clone https://github.com/prakash0067/Inventra.git
