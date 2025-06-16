@@ -1,0 +1,112 @@
+<?php
+header("Content-Type: application/json");
+
+$response = ["success" => false, "message" => ""];
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    // Check if file and product_id are present
+    if (!isset($_FILES['product_image']) || !isset($_POST['product_id'])) {
+        $response['message'] = 'Missing required fields.';
+        echo json_encode($response);
+        exit;
+    }
+
+    $productId = intval($_POST['product_id']);
+    $file = $_FILES['product_image'];
+
+    // Check for upload errors
+    if ($file['error'] !== UPLOAD_ERR_OK) {
+        $response['message'] = 'File upload error.';
+        echo json_encode($response);
+        exit;
+    }
+
+    // Validate MIME type
+    $allowedMimeTypes = ['image/jpeg', 'image/png'];
+    $allowedExtensions = ['jpg', 'jpeg', 'png'];
+
+    $fileExt = strtolower(pathinfo($file['name'], PATHINFO_EXTENSION));
+    if (!in_array($fileExt, $allowedExtensions)) {
+        $response['message'] = 'Only JPG, JPEG, and PNG files are allowed.';
+        echo json_encode($response);
+        exit;
+    }
+
+    $imageInfo = getimagesize($file['tmp_name']);
+    if ($imageInfo === false || !in_array($imageInfo['mime'], $allowedMimeTypes)) {
+        $response['message'] = 'Invalid or unsupported image format.';
+        echo json_encode($response);
+        exit;
+    }
+
+    // Prepare upload directory
+    $uploadDir = '../img/';
+    if (!file_exists($uploadDir)) {
+        mkdir($uploadDir, 0777, true);
+    }
+
+    // Unique file name
+    $fileName = 'product_' . $productId . '_' . time() . '.jpg';  // Save as .jpg
+    $targetPath = $uploadDir . $fileName;
+
+    // Load original image using GD
+    switch ($imageInfo['mime']) {
+        case 'image/jpeg':
+            $image = imagecreatefromjpeg($file['tmp_name']);
+            break;
+        case 'image/png':
+            $image = imagecreatefrompng($file['tmp_name']);
+            break;
+        default:
+            $response['message'] = 'Unsupported image type.';
+            echo json_encode($response);
+            exit;
+    }
+
+    // Crop to square
+    $width = imagesx($image);
+    $height = imagesy($image);
+    $size = min($width, $height);
+    $x = ($width - $size) / 2;
+    $y = ($height - $size) / 2;
+
+    $squareImage = imagecreatetruecolor(300, 300);
+    imagecopyresampled($squareImage, $image, 0, 0, $x, $y, 300, 300, $size, $size);
+
+    // Save compressed image
+    if (!imagejpeg($squareImage, $targetPath, 75)) {
+        $response['message'] = 'Failed to save processed image.';
+        echo json_encode($response);
+        exit;
+    }
+
+    imagedestroy($image);
+    imagedestroy($squareImage);
+
+    // Update database
+    require_once '../db_config.php'; // Ensure this has getDB()
+
+    $conn = getDB();
+    $stmt = $conn->prepare("UPDATE products SET image_path = ? WHERE product_id = ?");
+    if ($stmt) {
+        $stmt->bind_param("si", $fileName, $productId);
+        if ($stmt->execute()) {
+            $response['success'] = true;
+            $response['message'] = 'Product image uploaded and saved successfully.';
+            $response['image_url'] = $targetPath;
+        } else {
+            $response['message'] = 'Failed to update product.';
+        }
+        $stmt->close();
+    } else {
+        $response['message'] = 'Database error: failed to prepare statement.';
+    }
+
+    $conn->close();
+
+} else {
+    $response['message'] = 'Invalid request method.';
+}
+
+echo json_encode($response);
