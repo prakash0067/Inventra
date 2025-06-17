@@ -18,7 +18,7 @@
 ### 👥 Staff Management
 - Add staff members with name and email
 - Remove staff with confirmation dialogs
-- All data managed locally with **SQLite** and synced with **MySQL**
+- All data managed with **MySQL**
 
 ### 🛒 Cart & Billing
 - Add products to cart with quantity control
