@@ -57,7 +57,7 @@
 - **Voice Recognition**: Android SpeechRecognizer
 - **Task Scheduling**: WorkManager
 
-### 📁 Database File (database name : inventra)
+### 🗂️ Database File (database name : inventra)
 - **File**: inventra.sql
 
 ### 📁 Folder Structure (Important Parts)
